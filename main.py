@@ -51,11 +51,11 @@ def main():
     print("\n" + "="*60)
     print("            FINAL BACKTEST PERFORMANCE SUMMARY            ")
     print("="*60)
-    print(f"💰 Total PnL (Realized + MtM):     ${report['total_pnl'].sum():,.2f}")
-    print(f"📊 Avg PnL per Bond:               ${report['total_pnl'].mean():,.2f}")
-    print(f"🔄 Avg Inventory Turnover:         {report['turnover_ratio'].mean():.2f}x")
-    print(f"🎯 Avg Capture Rate (Hit Ratio):   {report['capture_rate'].mean()*100:.2f}%")
-    print(f"🎯 Avg Captured Slippage (bps):    {report['avg_slippage_bps'].mean():.2f}")
+    print(f"Total PnL (Realized + MtM):     ${report['total_pnl'].sum():,.2f}")
+    print(f"Avg PnL per Bond:               ${report['total_pnl'].mean():,.2f}")
+    print(f"Avg Inventory Turnover:         {report['turnover_ratio'].mean():.2f}x")
+    print(f"Avg Capture Rate (Hit Ratio):   {report['capture_rate'].mean()*100:.2f}%")
+    print(f"Avg Captured Slippage (bps):    {report['avg_slippage_bps'].mean():.2f}")
     print("="*60)
 
     # =========================================================================
@@ -103,4 +103,5 @@ def main():
             print(f"{key:20}: {value:>12}")
 
 if __name__ == "__main__":
+
     main()
