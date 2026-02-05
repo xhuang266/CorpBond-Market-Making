@@ -1,8 +1,12 @@
-# Automated Corporate Bond Market Making via Stochastic Optimal Control
+# Automated Corporate Bond Market Making via Stochastic Optimal Control + Full-Stack Dashboard
 
 This project implements an **Event-Driven RFQ (Request for Quote) Quoting Engine** specifically designed for the US Corporate Bond market. The system leverages the **Guéant-Lehalle-Tapia (2013)** framework to provide liquidity while dynamically managing inventory risk in a fragmented, illiquid environment.
 
+The system is deployed as a **full-stack application** featuring a **Flask REST API** backend and a **React-based Trader Dashboard**, mimicking professional trading terminals like MarketAxess or Bloomberg ALLQ.
 ---
+<p align="center">
+  <img src="demo.png" alt="BondAlgo Dashboard" width="100%">
+</p>
 
 ## 🚀 Key Features
 
@@ -15,6 +19,11 @@ Beyond the theoretical framework, this engine incorporates several "production-g
 * **Robust Safety Valves:**
     * **Inventory Dampening:** Prevents "Panic Pricing" by clipping extreme inventory inputs, ensuring the model stays competitive even during high exposure.
     * **Volatility-Linked Stop-Loss:** Implements a dynamic "Maximum Give-up" floor based on real-time volatility to protect the book during regime shifts.
+* **Backend (Python/Flask):** Exposes the quantitative model via RESTful API endpoints. Handles numerical optimization and data processing.
+* **Frontend (React + Tailwind):** A high-performance, dark-mode trading dashboard that features:
+    * Real-time RFQ simulation.
+    * Interactive parameter tuning (Gamma, Intensity, Decay).
+    * Visualizations for fill probability and spread decomposition.
 
 ---
 
@@ -22,12 +31,20 @@ Beyond the theoretical framework, this engine incorporates several "production-g
 
 ```text
 BondMarketMaking/
-├── data/                    # Historical trade data (e.g., rfq_data.csv)
-├── src/                     # Core Source Code
-│   ├── __init__.py
-│   ├── models.py            # Data structures & Market Microstructure parameters
-│   ├── engines.py           # Mathematical engines (Guéant & Execution logic)
-│   ├── pricing_system.py    # Logic aggregator & business rule integration
-│   └── backtest.py          # Event-driven simulator & visualization suite
-├── main.py                  # Entry point for running the full simulation
-└── requirements.txt         # Dependency list (numpy, pandas, matplotlib, seaborn)
+├── backend/                 # Python Logic & API
+│   ├── src/                 # Quantitative Core
+│   │   ├── models.py        # Microstructure Parameters
+│   │   ├── pricing_system.py# Guéant-Lehalle Logic
+│   │   └── engines.py       # Math Utilities
+│   ├── data/                # Historical Market Data (CSV/Parquet)
+│   ├── app.py               # Flask REST API Entry Point
+│   └── main.py              # CLI Simulation Entry Point
+│
+├── frontend/                # React Dashboard
+│   ├── src/
+│   │   ├── Dashboard.jsx    # Main Trading UI Component
+│   │   └── ...
+│   └── public/
+│
+├── .gitignore               # Project Configuration
+└── README.md                # Documentation
