@@ -11,10 +11,10 @@ This project implements an **Event-Driven RFQ (Request for Quote) Quoting Engine
 
 Beyond the theoretical framework, this engine incorporates several "production-grade" enhancements to handle real-world trading constraints:
 
-* **Dynamic Inventory Skewing:** Implements the closed-form solution for stochastic optimal control to calculate the optimal price deviation (skew) based on current position and risk aversion ($\gamma$).
+* **Dynamic Inventory Skewing:** Implements the closed-form solution for stochastic optimal control to calculate the optimal price deviation based on current position and risk aversion.
 * **Microstructure-Adjusted Pricing:**
-    * **Square-Root Impact Law:** Quantifies the liquidity premium required for large block trades relative to Average Daily Volume (ADV).
-    * **Logistic Execution Model:** Calibrates fill probability ($P_{fill}$) based on spread width and order size to prevent "quoting out of the market."
+    * **Square-Root Impact Law:** Quantifies the liquidity premium required for large block trades relative to Average Daily Volume.
+    * **Logistic Execution Model:** Calibrates fill probability based on spread width and order size to prevent "quoting out of the market."
 * **Robust Safety Valves:**
     * **Inventory Dampening:** Prevents "Panic Pricing" by clipping extreme inventory inputs, ensuring the model stays competitive even during high exposure.
     * **Volatility-Linked Stop-Loss:** Implements a dynamic "Maximum Give-up" floor based on real-time volatility to protect the book during regime shifts.
@@ -48,5 +48,6 @@ BondMarketMaking/
 ├── .gitignore               # Project Configuration
 
 └── README.md                # Documentation
+
 
 
