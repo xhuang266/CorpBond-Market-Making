@@ -1,6 +1,6 @@
 # Automated Corporate Bond Market Making via Stochastic Optimal Control + Full-Stack Dashboard
 
-This project implements an **Event-Driven RFQ (Request for Quote) Quoting Engine** specifically designed for the US Corporate Bond market. The system leverages the **Guéant-Lehalle-Tapia (2013)** framework to provide liquidity while dynamically managing inventory risk in a fragmented, illiquid environment. The system is deployed as a **full-stack application** featuring a **Flask REST API** backend and a **React-based Trader Dashboard**, mimicking professional trading terminals like MarketAxess or Bloomberg ALLQ.
+This project implements an **Event-Driven RFQ (Request for Quote) Quoting Engine** specifically designed for the US Corporate Bond market. The system leverages the **Guéant-Lehalle-Tapia (2013)** framework to provide liquidity while dynamically managing inventory risk in a fragmented, illiquid environment. The system is deployed as a **full-stack application** featuring a **Flask REST API** backend and a **React-based Trader Dashboard**.
 
 ---
 <p align="center">
@@ -48,3 +48,4 @@ BondMarketMaking/
 ├── .gitignore               # Project Configuration
 
 └── README.md                # Documentation
+
