@@ -7,7 +7,7 @@ This project implements an **Event-Driven RFQ (Request for Quote) Quoting Engine
   <img src="demo.png" alt="BondAlgo Dashboard" width="100%">
 </p>
 
-## 🚀 Key Features
+## Key Features
 
 Beyond the theoretical framework, this engine incorporates several "production-grade" enhancements to handle real-world trading constraints:
 
@@ -26,7 +26,7 @@ Beyond the theoretical framework, this engine incorporates several "production-g
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 BondMarketMaking/
@@ -48,4 +48,5 @@ BondMarketMaking/
 ├── .gitignore               # Project Configuration
 
 └── README.md                # Documentation
+
 
